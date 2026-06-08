@@ -1,4 +1,4 @@
-package com.example.nutripath.ui.theme
+package vn.anhbt.nutripath.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

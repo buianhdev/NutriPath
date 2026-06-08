@@ -1,4 +1,4 @@
-package com.example.nutripath
+package vn.anhbt.nutripath
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.nutripath.ui.theme.NutriPathTheme
+import vn.anhbt.nutripath.presentation.theme.NutriPathTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +29,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -40,5 +41,5 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun PreviewGreeting() {
-    Greeting(name = "Hello worldclaude")
+    Greeting(name = "NutriPath")
 }

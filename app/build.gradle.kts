@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.nutripath"
+    namespace = "vn.anhbt.nutripath"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.nutripath"
+        applicationId = "vn.anhbt.nutripath"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -48,6 +48,12 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
