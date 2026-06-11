@@ -1,9 +1,9 @@
 package vn.anhbt.nutripath.domain.model
 
-import java.time.LocalDate
+import java.time.Instant
 
 data class DailyLogSummary(
-    val date: LocalDate,
+    val date: Instant,
     val mealEntries: List<MealEntry>,
     val targetCalories: Double,
     val consumedCalories: Double,

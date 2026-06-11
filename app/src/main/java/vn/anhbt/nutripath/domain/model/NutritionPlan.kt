@@ -4,7 +4,6 @@ import java.time.Instant
 
 data class NutritionPlan(
     val id: String,
-    val nutritionGoalId: String,
     val bmr: Double,
     val tdee: Double,
     val goalCalories: Double,
