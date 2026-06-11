@@ -18,7 +18,8 @@ import vn.anhbt.nutripath.domain.model.MacroBreakdown
         )
     ],
     indices = [
-        Index("foodId")
+        Index("foodId"),
+        Index("createdAt")
     ]
 )
 data class MealEntryEntity(
