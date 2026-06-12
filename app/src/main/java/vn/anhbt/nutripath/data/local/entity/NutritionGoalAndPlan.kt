@@ -9,5 +9,5 @@ data class NutritionGoalAndPlan(
         parentColumn = "id",
         entityColumn = "nutritionGoalId"
     )
-    val nutritionPlan: NutritionPlan
+    val nutritionPlan: NutritionPlanEntity
 )

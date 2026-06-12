@@ -1,9 +1,11 @@
 package vn.anhbt.nutripath.data.local.entity
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "food")
 data class FoodEntity(
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
     val baseAmountG: Double,
