@@ -9,6 +9,7 @@ import vn.anhbt.nutripath.data.local.converters.GoalSpeedConverter
 import vn.anhbt.nutripath.data.local.converters.GoalTypeConverter
 import vn.anhbt.nutripath.data.local.converters.MealSourceConverter
 import vn.anhbt.nutripath.data.local.converters.PALConverter
+import vn.anhbt.nutripath.data.local.converters.StringListConverter
 import vn.anhbt.nutripath.data.local.dao.FoodDao
 import vn.anhbt.nutripath.data.local.dao.MealEntryDao
 import vn.anhbt.nutripath.data.local.dao.NutritionGoalDao
@@ -33,7 +34,8 @@ import vn.anhbt.nutripath.data.local.entity.UserProfileEntity
     GoalSpeedConverter::class,
     GoalTypeConverter::class,
     MealSourceConverter::class,
-    PALConverter::class
+    PALConverter::class,
+    StringListConverter::class
 )
 abstract class AppDatabase: RoomDatabase() {
 

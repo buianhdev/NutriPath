@@ -8,6 +8,7 @@ data class FoodEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
     val name: String,
+    val ingredients: List<String>,
     val baseAmountG: Double,
     val caloriesPerBase: Double,
     val proteinPerBase: Double,

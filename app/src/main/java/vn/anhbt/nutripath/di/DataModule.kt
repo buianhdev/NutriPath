@@ -9,6 +9,14 @@ import vn.anhbt.nutripath.data.local.dao.NutritionGoalDao
 import vn.anhbt.nutripath.data.local.dao.NutritionPlanDao
 import vn.anhbt.nutripath.data.local.dao.UserDao
 import vn.anhbt.nutripath.data.local.database.AppDatabase
+import vn.anhbt.nutripath.data.repository.FoodRepositoryImpl
+import vn.anhbt.nutripath.data.repository.MealEntryRepositoryImpl
+import vn.anhbt.nutripath.data.repository.NutritionGoalRepositoryImpl
+import vn.anhbt.nutripath.data.repository.UserRepositoryImpl
+import vn.anhbt.nutripath.domain.repository.FoodRepository
+import vn.anhbt.nutripath.domain.repository.MealEntryRepository
+import vn.anhbt.nutripath.domain.repository.NutritionGoalRepository
+import vn.anhbt.nutripath.domain.repository.UserRepository
 
 val dataModule = module {
     single<AppDatabase> {
@@ -38,4 +46,9 @@ val dataModule = module {
     single<NutritionPlanDao> {
         get<AppDatabase>().nutritionPlanDao()
     }
+
+    single<UserRepository> { UserRepositoryImpl(get()) }
+    single<FoodRepository> { FoodRepositoryImpl(get()) }
+    single<MealEntryRepository> { MealEntryRepositoryImpl(get()) }
+    single<NutritionGoalRepository> { NutritionGoalRepositoryImpl(get()) }
 }

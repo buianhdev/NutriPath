@@ -6,6 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import vn.anhbt.nutripath.domain.model.MacroBreakdown
+import vn.anhbt.nutripath.domain.model.MealSource
 
 @Entity(
     tableName = "meal_entry",
@@ -25,8 +26,10 @@ import vn.anhbt.nutripath.domain.model.MacroBreakdown
 data class MealEntryEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
-    val amountG: Double,
+    val source: MealSource,
+    val foodId: Long?,
+    val amountG: Double?,
     @Embedded val macroBreakdown: MacroBreakdown,
     val createdAt: Long,
-    val foodId: Long
+    val updatedAt: Long
 )

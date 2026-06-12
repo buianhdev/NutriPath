@@ -3,7 +3,7 @@ package vn.anhbt.nutripath.domain.model
 import java.time.Instant
 
 data class NutritionPlan(
-    val id: String,
+    val id: Long,
     val bmr: Double,
     val tdee: Double,
     val goalCalories: Double,

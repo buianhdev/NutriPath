@@ -4,9 +4,9 @@ import java.time.Instant
 import java.time.LocalDate
 
 data class MealEntry(
-    val id: String,
+    val id: Long,
     val source: MealSource,
-    val foodId: String?,
+    val foodId: Long?,
     val amountG: Double?,
     val macroBreakdown: MacroBreakdown,
     val createdAt: Instant,

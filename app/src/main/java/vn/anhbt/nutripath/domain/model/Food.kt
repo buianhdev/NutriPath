@@ -1,7 +1,7 @@
 package vn.anhbt.nutripath.domain.model
 
 data class Food(
-    val id: String,
+    val id: Long,
     val name: String,
     val ingredients: List<String>,
     val baseAmountG: Double,

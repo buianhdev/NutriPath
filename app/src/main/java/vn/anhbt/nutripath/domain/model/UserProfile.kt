@@ -3,7 +3,7 @@ package vn.anhbt.nutripath.domain.model
 import java.time.Instant
 
 data class UserProfile(
-    val id: String,
+    val id: Long,
     val weightKg: Double,
     val heightCm: Double,
     val age: Int,
