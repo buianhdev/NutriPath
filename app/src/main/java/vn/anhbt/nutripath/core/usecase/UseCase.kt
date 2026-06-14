@@ -1,4 +1,4 @@
-package vn.anhbt.nutripath.domain.usecase
+package vn.anhbt.nutripath.core.usecase
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
