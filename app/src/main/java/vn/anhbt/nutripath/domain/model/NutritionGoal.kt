@@ -3,11 +3,12 @@ package vn.anhbt.nutripath.domain.model
 import java.time.Instant
 
 data class NutritionGoal(
-    val id: String,
+    val id: Long,
     val goalType: GoalType,
     val goalSpeed: GoalSpeed,
     val targetWeightKg: Double,
     val startWeightKg: Double,
     val createdAt: Instant,
+    val userId: Long,
     val isActive: Boolean
 )
