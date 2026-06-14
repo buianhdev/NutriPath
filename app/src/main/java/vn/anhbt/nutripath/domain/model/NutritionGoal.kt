@@ -9,5 +9,6 @@ data class NutritionGoal(
     val targetWeightKg: Double,
     val startWeightKg: Double,
     val createdAt: Instant,
+    val userId: Long,
     val isActive: Boolean
 )

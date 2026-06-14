@@ -16,13 +16,12 @@ fun NutritionPlanEntity.toDomain(): NutritionPlan = NutritionPlan(
     currentWeightKg = currentWeightKg,
     targetWeightKg = targetWeightKg,
     estimatedGoalWeeks = estimatedGoalWeeks,
-    profileSnapshot = profileSnapshot,
-    goalSnapshot = goalSnapshot,
+    nutritionGoalId = nutritionGoalId,
     createdAt = Instant.ofEpochMilli(createdAt),
     isActive = isActive,
 )
 
-fun NutritionPlan.toEntity(nutritionGoalId: Long): NutritionPlanEntity = NutritionPlanEntity(
+fun NutritionPlan.toEntity(): NutritionPlanEntity = NutritionPlanEntity(
     id = id,
     bmr = bmr,
     tdee = tdee,
@@ -34,8 +33,6 @@ fun NutritionPlan.toEntity(nutritionGoalId: Long): NutritionPlanEntity = Nutriti
     currentWeightKg = currentWeightKg,
     targetWeightKg = targetWeightKg,
     estimatedGoalWeeks = estimatedGoalWeeks,
-    profileSnapshot = profileSnapshot,
-    goalSnapshot = goalSnapshot,
     createdAt = createdAt.toEpochMilli(),
     isActive = isActive,
     nutritionGoalId = nutritionGoalId,

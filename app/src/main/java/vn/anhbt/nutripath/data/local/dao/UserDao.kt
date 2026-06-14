@@ -24,6 +24,9 @@ interface UserDao {
     @Query("SELECT * FROM user_profile WHERE id = :userId")
     suspend fun getUserProfile(userId: Long): UserProfileEntity?
 
+    @Query("DELETE FROM user_profile WHERE id = :userId")
+    suspend fun deleteById(userId: Long)
+
     @Query("SELECT * FROM user_profile ORDER BY updatedAt DESC LIMIT 1")
     suspend fun getCurrentUserProfile(): UserProfileEntity?
 

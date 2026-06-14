@@ -34,7 +34,7 @@ interface NutritionPlanDao {
         """
         SELECT p.* FROM nutrition_plan p
         INNER JOIN nutrition_goal g ON g.id = p.nutritionGoalId
-        WHERE g.userId = :userId AND g.isActive = 1
+        WHERE g.userId = :userId AND p.isActive = 1
         LIMIT 1
         """
     )
@@ -44,7 +44,7 @@ interface NutritionPlanDao {
         """
         SELECT p.* FROM nutrition_plan p
         INNER JOIN nutrition_goal g ON g.id = p.nutritionGoalId
-        WHERE g.userId = :userId AND g.isActive = 1
+        WHERE g.userId = :userId AND p.isActive = 1
         LIMIT 1
         """
     )
@@ -59,4 +59,13 @@ interface NutritionPlanDao {
         """
     )
     suspend fun getHistory(userId: Long): List<NutritionPlanEntity>
+
+    @Query(
+        """
+        UPDATE nutrition_plan SET isActive = 0
+        WHERE isActive = 1
+          AND nutritionGoalId IN (SELECT id FROM nutrition_goal WHERE userId = :userId)
+        """
+    )
+    suspend fun deactivateAll(userId: Long)
 }

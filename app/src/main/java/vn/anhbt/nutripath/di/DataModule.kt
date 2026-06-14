@@ -12,10 +12,12 @@ import vn.anhbt.nutripath.data.local.database.AppDatabase
 import vn.anhbt.nutripath.data.repository.FoodRepositoryImpl
 import vn.anhbt.nutripath.data.repository.MealEntryRepositoryImpl
 import vn.anhbt.nutripath.data.repository.NutritionGoalRepositoryImpl
+import vn.anhbt.nutripath.data.repository.NutritionPlanRepositoryImpl
 import vn.anhbt.nutripath.data.repository.UserRepositoryImpl
 import vn.anhbt.nutripath.domain.repository.FoodRepository
 import vn.anhbt.nutripath.domain.repository.MealEntryRepository
 import vn.anhbt.nutripath.domain.repository.NutritionGoalRepository
+import vn.anhbt.nutripath.domain.repository.NutritionPlanRepository
 import vn.anhbt.nutripath.domain.repository.UserRepository
 
 val dataModule = module {
@@ -51,4 +53,5 @@ val dataModule = module {
     single<FoodRepository> { FoodRepositoryImpl(get()) }
     single<MealEntryRepository> { MealEntryRepositoryImpl(get()) }
     single<NutritionGoalRepository> { NutritionGoalRepositoryImpl(get()) }
+    single<NutritionPlanRepository> { NutritionPlanRepositoryImpl(get()) }
 }

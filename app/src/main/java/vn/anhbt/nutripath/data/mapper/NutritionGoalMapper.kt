@@ -11,10 +11,11 @@ fun NutritionGoalEntity.toDomain(): NutritionGoal = NutritionGoal(
     targetWeightKg = targetWeightKg,
     startWeightKg = startWeightKg,
     createdAt = Instant.ofEpochMilli(createdAt),
+    userId = userId,
     isActive = isActive,
 )
 
-fun NutritionGoal.toEntity(userId: Long): NutritionGoalEntity = NutritionGoalEntity(
+fun NutritionGoal.toEntity(): NutritionGoalEntity = NutritionGoalEntity(
     id = id,
     targetWeightKg = targetWeightKg,
     startWeightKg = startWeightKg,

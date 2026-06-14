@@ -14,23 +14,7 @@ data class NutritionPlan(
     val currentWeightKg: Double,
     val targetWeightKg: Double,
     val estimatedGoalWeeks: Double?,
-    val profileSnapshot: ProfileSnapshot,
-    val goalSnapshot: GoalSnapshot,
+    val nutritionGoalId: Long,
     val createdAt: Instant,
     val isActive: Boolean
-) {
-    data class ProfileSnapshot(
-        val weightKg: Double,
-        val heightCm: Double,
-        val age: Int,
-        val gender: Gender,
-        val pal: PAL
-    )
-
-    data class GoalSnapshot(
-        val goalType: GoalType,
-        val goalSpeed: GoalSpeed,
-        val targetWeightKg: Double,
-        val startWeightKg: Double
-    )
-}
+)

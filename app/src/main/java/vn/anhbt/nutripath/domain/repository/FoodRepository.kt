@@ -7,11 +7,9 @@ interface FoodRepository {
 
     suspend fun getFoodById(id: Long): Resource<Food?>
 
-    suspend fun getAllFoods(): Resource<List<Food>>
-
-    suspend fun searchFoods(query: String): Resource<List<Food>>
-
     suspend fun saveFood(food: Food): Resource<Long>
+
+    suspend fun updateFood(food: Food): Resource<Unit>
 
     suspend fun deleteFood(id: Long): Resource<Unit>
 }

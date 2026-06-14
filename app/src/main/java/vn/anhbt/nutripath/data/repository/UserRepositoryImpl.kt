@@ -15,6 +15,12 @@ class UserRepositoryImpl(
     override suspend fun getUserProfile(userId: Long): Resource<UserProfile?> =
         resourceOf { userDao.getUserProfile(userId)?.toDomain() }
 
+    override suspend fun saveUserProfile(userProfile: UserProfile): Resource<Long> =
+        resourceOf { userDao.insert(userProfile.toEntity()) }
+
     override suspend fun updateUserProfile(userProfile: UserProfile): Resource<Unit> =
         resourceOf { userDao.update(userProfile.toEntity()) }
+
+    override suspend fun deleteUserProfile(userId: Long): Resource<Unit> =
+        resourceOf { userDao.deleteById(userId) }
 }
