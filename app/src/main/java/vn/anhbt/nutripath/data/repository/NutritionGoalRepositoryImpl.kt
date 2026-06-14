@@ -15,6 +15,9 @@ class NutritionGoalRepositoryImpl(
     override suspend fun getGoalById(id: Long): Resource<NutritionGoal?> =
         resourceOf { nutritionGoalDao.getById(id)?.toDomain() }
 
+    override suspend fun getActiveGoal(userId: Long): Resource<NutritionGoal?> =
+        resourceOf { nutritionGoalDao.getActiveGoal(userId)?.toDomain() }
+
     override suspend fun saveGoal(goal: NutritionGoal): Resource<Long> =
         resourceOf { nutritionGoalDao.insert(goal.toEntity()) }
 

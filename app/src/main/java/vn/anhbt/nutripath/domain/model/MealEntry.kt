@@ -1,10 +1,10 @@
 package vn.anhbt.nutripath.domain.model
 
 import java.time.Instant
-import java.time.LocalDate
 
 data class MealEntry(
     val id: Long,
+    val userId: Long,
     val source: MealSource,
     val foodId: Long?,
     val amountG: Double?,

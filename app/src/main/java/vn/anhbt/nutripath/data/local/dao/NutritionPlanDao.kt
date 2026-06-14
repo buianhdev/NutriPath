@@ -30,6 +30,9 @@ interface NutritionPlanDao {
     @Query("SELECT * FROM nutrition_plan WHERE nutritionGoalId = :goalId LIMIT 1")
     suspend fun getByGoalId(goalId: Long): NutritionPlanEntity?
 
+    @Query("SELECT * FROM nutrition_plan WHERE isActive = 1 LIMIT 1")
+    suspend fun getFirstActivePlan(): NutritionPlanEntity?
+
     @Query(
         """
         SELECT p.* FROM nutrition_plan p

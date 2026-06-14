@@ -15,6 +15,9 @@ class FoodRepositoryImpl(
     override suspend fun getFoodById(id: Long): Resource<Food?> =
         resourceOf { foodDao.getById(id)?.toDomain() }
 
+    override suspend fun searchFoods(query: String): Resource<List<Food>> =
+        resourceOf { foodDao.search(query).map { it.toDomain() } }
+
     override suspend fun saveFood(food: Food): Resource<Long> =
         resourceOf { foodDao.insert(food.toEntity()) }
 

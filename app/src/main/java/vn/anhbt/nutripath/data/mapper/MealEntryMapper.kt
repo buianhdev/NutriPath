@@ -6,6 +6,7 @@ import vn.anhbt.nutripath.domain.model.MealEntry
 
 fun MealEntryEntity.toDomain(): MealEntry = MealEntry(
     id = id,
+    userId = userId,
     source = source,
     foodId = foodId,
     amountG = amountG,
@@ -16,6 +17,7 @@ fun MealEntryEntity.toDomain(): MealEntry = MealEntry(
 
 fun MealEntry.toEntity(): MealEntryEntity = MealEntryEntity(
     id = id,
+    userId = userId,
     source = source,
     foodId = foodId,
     amountG = amountG,

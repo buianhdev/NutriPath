@@ -7,6 +7,8 @@ interface NutritionGoalRepository {
 
     suspend fun getGoalById(id: Long): Resource<NutritionGoal?>
 
+    suspend fun getActiveGoal(userId: Long): Resource<NutritionGoal?>
+
     suspend fun saveGoal(goal: NutritionGoal): Resource<Long>
 
     suspend fun updateGoal(goal: NutritionGoal): Resource<Unit>

@@ -22,4 +22,7 @@ class GoalWeeksCalculatorImpl : GoalWeeksCalculator {
 
         return weightDiff / estimatedKgPerWeek
     }
+
+    override fun kgPerWeek(tdee: Double, targetCalories: Double): Double =
+        (targetCalories - tdee) * 7.0 / 7700.0
 }

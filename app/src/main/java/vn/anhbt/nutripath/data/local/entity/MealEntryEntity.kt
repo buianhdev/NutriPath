@@ -12,6 +12,12 @@ import vn.anhbt.nutripath.domain.model.MealSource
     tableName = "meal_entry",
     foreignKeys = [
         ForeignKey(
+            entity = UserProfileEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["userId"],
+            onDelete = ForeignKey.CASCADE
+        ),
+        ForeignKey(
             entity = FoodEntity::class,
             parentColumns = ["id"],
             childColumns = ["foodId"],
@@ -19,6 +25,7 @@ import vn.anhbt.nutripath.domain.model.MealSource
         )
     ],
     indices = [
+        Index("userId"),
         Index("foodId"),
         Index("createdAt")
     ]
@@ -26,6 +33,7 @@ import vn.anhbt.nutripath.domain.model.MealSource
 data class MealEntryEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long,
+    val userId: Long,
     val source: MealSource,
     val foodId: Long?,
     val amountG: Double?,

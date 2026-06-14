@@ -7,4 +7,6 @@ interface GoalWeeksCalculator {
         tdee: Double,
         targetCalories: Double
     ): Double?
+
+    fun kgPerWeek(tdee: Double, targetCalories: Double): Double
 }

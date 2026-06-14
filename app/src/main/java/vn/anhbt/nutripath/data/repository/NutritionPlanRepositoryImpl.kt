@@ -15,6 +15,9 @@ class NutritionPlanRepositoryImpl(
     override suspend fun getPlanById(id: Long): Resource<NutritionPlan?> =
         resourceOf { nutritionPlanDao.getById(id)?.toDomain() }
 
+    override suspend fun getActivePlan(): Resource<NutritionPlan?> =
+        resourceOf { nutritionPlanDao.getFirstActivePlan()?.toDomain() }
+
     override suspend fun savePlan(plan: NutritionPlan): Resource<Long> =
         resourceOf { nutritionPlanDao.insert(plan.toEntity()) }
 
@@ -23,4 +26,7 @@ class NutritionPlanRepositoryImpl(
 
     override suspend fun deletePlan(id: Long): Resource<Unit> =
         resourceOf { nutritionPlanDao.deleteById(id) }
+
+    override suspend fun deactivateAllPlans(userId: Long): Resource<Unit> =
+        resourceOf { nutritionPlanDao.deactivateAll(userId) }
 }

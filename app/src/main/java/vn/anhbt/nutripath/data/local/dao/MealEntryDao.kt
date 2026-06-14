@@ -27,9 +27,9 @@ interface MealEntryDao {
     @Query("SELECT * FROM meal_entry WHERE id = :mealEntryId")
     suspend fun getById(mealEntryId: Long): MealEntryEntity?
 
-    @Query("SELECT * FROM meal_entry WHERE createdAt BETWEEN :startMillis AND :endMillis ORDER BY createdAt ASC")
-    suspend fun getByDateRange(startMillis: Long, endMillis: Long): List<MealEntryEntity>
+    @Query("SELECT * FROM meal_entry WHERE userId = :userId AND createdAt BETWEEN :startMillis AND :endMillis ORDER BY createdAt ASC")
+    suspend fun getByDateRange(userId: Long, startMillis: Long, endMillis: Long): List<MealEntryEntity>
 
-    @Query("SELECT * FROM meal_entry WHERE createdAt BETWEEN :startMillis AND :endMillis ORDER BY createdAt ASC")
-    fun observeByDateRange(startMillis: Long, endMillis: Long): Flow<List<MealEntryEntity>>
+    @Query("SELECT * FROM meal_entry WHERE userId = :userId AND createdAt BETWEEN :startMillis AND :endMillis ORDER BY createdAt ASC")
+    fun observeByDateRange(userId: Long, startMillis: Long, endMillis: Long): Flow<List<MealEntryEntity>>
 }

@@ -36,6 +36,6 @@ interface FoodDao {
     @Query("SELECT * FROM food ORDER BY name ASC")
     fun observeAll(): Flow<List<FoodEntity>>
 
-    @Query("SELECT * FROM food WHERE name LIKE '%' || :query || '%' ORDER BY name ASC")
+    @Query("SELECT * FROM food WHERE LOWER(name) LIKE '%' || :query || '%' ORDER BY name ASC")
     suspend fun search(query: String): List<FoodEntity>
 }
