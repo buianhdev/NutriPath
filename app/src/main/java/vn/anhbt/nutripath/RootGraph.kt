@@ -19,6 +19,6 @@ fun RootGraph(modifier: Modifier = Modifier) {
     ) {
         onboardingGraph(navController)
 
-        mainGraph(navController)
+        mainGraph()
     }
 }

@@ -6,24 +6,26 @@ sealed class Routes {
 
     // Onboarding graph
     @Serializable
-    data object FirstOpen : Routes()
+    data object FirstOpenRoute : Routes()
 
     @Serializable
-    data object PlanningScreen : Routes()
+    data object PlanningRoute : Routes()
 
     @Serializable
-    data object PlanningResultScreen : Routes()
+    data object PlanningResultRoute : Routes()
 
     // Main graph
     @Serializable
-    data object HomeScreen : Routes()
+    data object HomeRoute : Routes()
 
     @Serializable
-    data object DailyLogScreen : Routes()
+    data object DailyLogRoute : Routes()
 
     @Serializable
-    data object ProfileScreen : Routes()
+    data object ProfileRoute : Routes()
 
+    @Serializable
+    data object MainRoute : Routes()
 }
 sealed class NestedGraph {
     @Serializable

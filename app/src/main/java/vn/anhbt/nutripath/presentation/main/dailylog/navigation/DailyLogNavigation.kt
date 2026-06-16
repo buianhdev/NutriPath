@@ -10,11 +10,11 @@ import vn.anhbt.nutripath.presentation.navigation.Routes
 fun NavController.navigateToDailyLog(
     navOptions: NavOptions? = null
 ) {
-    navigate(Routes.DailyLogScreen, navOptions)
+    navigate(Routes.DailyLogRoute, navOptions)
 }
 
 fun NavGraphBuilder.dailyLogScreen() {
-    composable<Routes.DailyLogScreen> {
+    composable<Routes.DailyLogRoute> {
         DailyLogScreen()
     }
 }

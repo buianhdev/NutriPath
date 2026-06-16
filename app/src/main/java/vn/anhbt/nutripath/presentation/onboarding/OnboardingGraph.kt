@@ -16,7 +16,7 @@ fun NavGraphBuilder.onboardingGraph(
     navController: NavController
 ) {
     navigation<NestedGraph.OnboardingGraph>(
-        startDestination = Routes.FirstOpen
+        startDestination = Routes.FirstOpenRoute
     ) {
         firstOpenScreen(
             onContinue = { navController.navigateToPlanning() }
@@ -26,7 +26,7 @@ fun NavGraphBuilder.onboardingGraph(
         )
         planningResultScreen(
             onFinish = {
-                navController.navigate(NestedGraph.MainGraph, navOptions {
+                navController.navigate(Routes.MainRoute, navOptions {
                     popUpTo<NestedGraph.OnboardingGraph> { inclusive = true }
                     launchSingleTop = true
                 })

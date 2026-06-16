@@ -10,13 +10,13 @@ import vn.anhbt.nutripath.presentation.onboarding.firstopen.FirstOpenScreen
 fun NavController.navigateToFirstOpen(
     navOptions: NavOptions? = null
 ) {
-    navigate(Routes.FirstOpen, navOptions)
+    navigate(Routes.FirstOpenRoute, navOptions)
 }
 
 fun NavGraphBuilder.firstOpenScreen(
     onContinue: () -> Unit = {}
 ) {
-    composable<Routes.FirstOpen> {
+    composable<Routes.FirstOpenRoute> {
         FirstOpenScreen(onContinue = onContinue)
     }
 }

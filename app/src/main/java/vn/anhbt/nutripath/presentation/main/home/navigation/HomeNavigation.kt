@@ -10,14 +10,14 @@ import vn.anhbt.nutripath.presentation.navigation.Routes
 fun NavController.navigateToHome(
     navOptions: NavOptions? = null
 ) {
-    navigate(Routes.HomeScreen, navOptions)
+    navigate(Routes.HomeRoute, navOptions)
 }
 
 fun NavGraphBuilder.homeScreen(
     onOpenDailyLog: () -> Unit = {},
     onOpenProfile: () -> Unit = {}
 ) {
-    composable<Routes.HomeScreen> {
+    composable<Routes.HomeRoute> {
         HomeScreen(
             onOpenDailyLog = onOpenDailyLog,
             onOpenProfile = onOpenProfile

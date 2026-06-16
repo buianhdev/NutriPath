@@ -10,11 +10,11 @@ import vn.anhbt.nutripath.presentation.navigation.Routes
 fun NavController.navigateToProfile(
     navOptions: NavOptions? = null
 ) {
-    navigate(Routes.ProfileScreen, navOptions)
+    navigate(Routes.ProfileRoute, navOptions)
 }
 
 fun NavGraphBuilder.profileScreen() {
-    composable<Routes.ProfileScreen> {
+    composable<Routes.ProfileRoute> {
         ProfileScreen()
     }
 }

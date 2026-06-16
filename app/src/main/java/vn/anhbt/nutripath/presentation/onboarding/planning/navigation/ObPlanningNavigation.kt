@@ -10,13 +10,13 @@ import vn.anhbt.nutripath.presentation.onboarding.planning.PlanningScreen
 fun NavController.navigateToPlanning(
     navOptions: NavOptions? = null
 ) {
-    navigate(Routes.PlanningScreen, navOptions)
+    navigate(Routes.PlanningRoute, navOptions)
 }
 
 fun NavGraphBuilder.planningScreen(
     onContinue: () -> Unit = {}
 ) {
-    composable<Routes.PlanningScreen> {
+    composable<Routes.PlanningRoute> {
         PlanningScreen(onContinue = onContinue)
     }
 }
