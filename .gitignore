@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Design handoff prototype (visual/behavioral spec, not production code)
+/design_handoff_nutripath/
