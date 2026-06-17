@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NutriPath launch-window background (dark espresso). -->
+    <color name="np_bg">#FF161009</color>
+</resources>
